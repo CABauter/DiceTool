@@ -36,7 +36,7 @@ public class DiceSimulator
             Arrays.sort( numbersOnDice );
             int sum = 0;
 
-            for( k = drop; k < diceCount; k++ )
+            for( int k = drop; k < diceCount; k++ )
             {
                 sum += numbersOnDice[k];
             }
