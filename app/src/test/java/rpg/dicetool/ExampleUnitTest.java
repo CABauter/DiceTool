@@ -23,9 +23,9 @@ public class ExampleUnitTest {
 
         for( int i = 0; i < results.length; i++)
         {
-            percentage -= (((double) results[i])/10000);
             System.out.println( i+" mit Wahrscheinlichkeit "+(((double) results[i])/10000)+" und gesamt: "+ percentage );
             sumResults += results[i];
+            percentage -= (((double) results[i])/10000);
         }
 
         System.out.println( "Die Gesamtzahl der Würfe ist: " + sumResults );
