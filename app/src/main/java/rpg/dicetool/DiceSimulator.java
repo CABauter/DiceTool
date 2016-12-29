@@ -28,7 +28,7 @@ public class DiceSimulator
             for( int j = 0; j < diceCount; j++ )
             {
                 Random randomNumber = new Random();
-                int numberOnDie = randomNumber.nextInt( diceTypes[i] );
+                int numberOnDie = randomNumber.nextInt( diceTypes[j] ) + 1;
                 numbersOnDice[j] = numberOnDie;
             }
 
