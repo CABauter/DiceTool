@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class DiceSimulator
 {
-    public static int[] simulate( int[] diceTypes, int drop )
+    public static int[] simulate( int[] diceTypes, int drop, int iterations )
     {
         int diceCount = diceTypes.length;
         int maximumDiceSum = 0;
@@ -18,9 +18,8 @@ public class DiceSimulator
         {
             maximumDiceSum += diceTypes[i];
         }
-        int[] count = new int[ maximumDiceSum ];
 
-        int iterations = 10000;
+        int[] count = new int[ maximumDiceSum + 1 ];
 
         for( int i = 0; i < iterations; i++ )
         {
@@ -29,7 +28,7 @@ public class DiceSimulator
             for( int j = 0; j < diceCount; j++ )
             {
                 Random randomNumber = new Random();
-                int numberOnDie = randomNumber.nextInt( diceTypes[i] );
+                int numberOnDie = randomNumber.nextInt( diceTypes[j] ) + 1;
                 numbersOnDice[j] = numberOnDie;
             }
 
@@ -40,6 +39,8 @@ public class DiceSimulator
             {
                 sum += numbersOnDice[k];
             }
+
+            count[ sum ] += 1;
         }
 
         return count;

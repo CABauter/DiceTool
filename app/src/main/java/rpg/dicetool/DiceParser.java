@@ -82,12 +82,12 @@ public class DiceParser
 
         if(droppart != "")
         {
-            parsedMap.put("drop", droppart.replace("D",""));
+            parsedMap.put("drop", Integer.parseInt(droppart.replace("D","")));
         }
 
         if(shiftpart != "")
         {
-            parsedMap.put("shift", shiftpart.replace("+",""));
+            parsedMap.put("shift", Integer.parseInt(shiftpart.replace("+","")));
         }
 
         return parsedMap;
@@ -99,5 +99,10 @@ public class DiceParser
 
 
         return parsedString;
+    }
+
+    public static boolean isValid(String expr)
+    {
+        return true;
     }
 }
